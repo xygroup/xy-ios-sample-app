@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 
+#import "AppDelegate.h"
+
 @interface ViewController ()
 
 @end
@@ -17,6 +19,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+
+    NSString *deviceId = ((AppDelegate *)[[UIApplication sharedApplication] delegate]).deviceId;
+   [self.deviceIdLabel setText: deviceId];
 }
 
 

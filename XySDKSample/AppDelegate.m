@@ -8,15 +8,59 @@
 
 #import "AppDelegate.h"
 
+#import <XySDK/XySDK.h>
+
 @interface AppDelegate ()
+
+@property (nonatomic, strong) XyClient *xyClient;
 
 @end
 
+NSString *XySDK_DEVICE_ID = @"XySDKDeviceId";
+
 @implementation AppDelegate
+
+- (void) establishDeviceId {
+    NSString *deviceId = [[NSUserDefaults standardUserDefaults] valueForKey: XySDK_DEVICE_ID];
+
+    if (deviceId == nil) {
+        NSString *uuid = [[NSUUID UUID] UUIDString];
+        deviceId = [[uuid stringByReplacingOccurrencesOfString: @"-" withString: @""] substringToIndex: 20];
+        NSLog(@"deviceId %@ %@", deviceId, @(deviceId.length));
+        [[NSUserDefaults standardUserDefaults] setValue: deviceId forKey: XySDK_DEVICE_ID];
+    }
+
+    self.deviceId = deviceId;
+}
+
+- (void) xyBluetoothIsEnabledNotification: (NSNotification *) note {
+    NSLog(@"XyBluetoothIsEnabledNotification");
+}
+
+- (void) xyBluetoothIsDisabledNotification: (NSNotification *) note {
+    NSLog(@"XyBluetoothIsDisabledNotification");
+}
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+
+    [self establishDeviceId];
+
+    self.xyClient = [XyClient clientWithDeviceId: self.deviceId];
+
+    [[NSNotificationCenter defaultCenter] addObserver: self
+                                             selector: @selector(xyBluetoothIsEnabledNotification:)
+                                                 name: XyBluetoothIsEnabledNotification
+                                               object: nil];
+
+    [[NSNotificationCenter defaultCenter] addObserver: self
+                                             selector: @selector(xyBluetoothIsDisabledNotification:)
+                                                 name: XyBluetoothIsDisabledNotification
+                                               object: nil];
+
+    [self.xyClient startBluetoothDiscovery];
+
     return YES;
 }
 
@@ -45,6 +89,8 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+
+    [self.xyClient stopBluetoothDiscovery];
 }
 
 
