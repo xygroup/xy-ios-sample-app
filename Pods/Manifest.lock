@@ -1,0 +1,16 @@
+PODS:
+  - XySDK (1.0.0)
+
+DEPENDENCIES:
+  - XySDK (from `../ios-sdk-release`)
+
+EXTERNAL SOURCES:
+  XySDK:
+    :path: "../ios-sdk-release"
+
+SPEC CHECKSUMS:
+  XySDK: 8e0af1997d0cd24f4248824223c64ee27c9ed607
+
+PODFILE CHECKSUM: df624d64a6390b384b732b5381f97179d1780cdb
+
+COCOAPODS: 1.6.0
