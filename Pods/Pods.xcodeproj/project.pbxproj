@@ -42,15 +42,12 @@
 		8189D5625C04125D54549549FC21FA11 /* Pods-XySDKSample.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-XySDKSample.modulemap"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A0BC8458AC95BC1F4D9A7A129698B574 /* Pods-XySDKSample-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-XySDKSample-frameworks.sh"; sourceTree = "<group>"; };
-		A9B1FE12C76EBEA946A2B8D9267177BE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		B412995ACD021F0EAE8313C69920B2CF /* Pods-XySDKSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-XySDKSample.debug.xcconfig"; sourceTree = "<group>"; };
-		BC736C6F03D6BFC1E48EAAE8B5CC2277 /* XySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XySDK.framework; path = Frameworks/XySDK.framework; sourceTree = "<group>"; };
-		BCE5F11BEEA94200E69269F7D7DEF106 /* XySDK.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = XySDK.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		B6FA2F867D7B148BAFB71D60B0677FC4 /* XySDK.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = XySDK.xcconfig; sourceTree = "<group>"; };
 		CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		CDF234A732B48227427179385FF1BBC9 /* Pods-XySDKSample-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-XySDKSample-Info.plist"; sourceTree = "<group>"; };
 		D330C52C25191307859ABC2D4625685D /* Pods-XySDKSample-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-XySDKSample-dummy.m"; sourceTree = "<group>"; };
-		DEDB206CF53E6498D2A1991E3DE0FC3C /* XySDK.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = XySDK.xcconfig; sourceTree = "<group>"; };
-		F2EE12B883DF920981E7895DC6E0076A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		DCDD97D245F574A97428FADCDA5F8C68 /* XySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XySDK.framework; path = Frameworks/XySDK.framework; sourceTree = "<group>"; };
 		F870B488A69C12522EA2A4546243259C /* Pods-XySDKSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-XySDKSample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,14 +63,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		22B72D688336D75FEE1AEEADCD3AF22D /* Pod */ = {
+		219DD267D7B1F8BB211C6433A54D82CC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A9B1FE12C76EBEA946A2B8D9267177BE /* LICENSE */,
-				F2EE12B883DF920981E7895DC6E0076A /* README.md */,
-				BCE5F11BEEA94200E69269F7D7DEF106 /* XySDK.podspec */,
+				DCDD97D245F574A97428FADCDA5F8C68 /* XySDK.framework */,
 			);
-			name = Pod;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		5D2818370052A107D39830291FFCA126 /* Pods-XySDKSample */ = {
@@ -101,21 +96,22 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		731E4CEE62B681E595F92E14E9A04A63 /* XySDK */ = {
+			isa = PBXGroup;
+			children = (
+				219DD267D7B1F8BB211C6433A54D82CC /* Frameworks */,
+				DC8E1343DC02A03025D2EBEE7F1B41AC /* Support Files */,
+			);
+			name = XySDK;
+			path = XySDK;
+			sourceTree = "<group>";
+		};
 		75D683F7B78476E3F997FD4F69AD0EA9 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
 				5D2818370052A107D39830291FFCA126 /* Pods-XySDKSample */,
 			);
 			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		8B5B74C227FE138C4D2256B697A05C9D /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				DEDB206CF53E6498D2A1991E3DE0FC3C /* XySDK.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../ios-sample-app/Pods/Target Support Files/XySDK";
 			sourceTree = "<group>";
 		};
 		9B055D0CFEA43187E72B03DED11F5662 /* iOS */ = {
@@ -126,20 +122,20 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		CBDA41C03B2CC20FD53CEAAE083153DD /* Development Pods */ = {
+		A0864F4CEBA09D6199790FDBFFDB4BF7 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				F9884743EEB4C8B1A46F6261FFD30139 /* XySDK */,
+				731E4CEE62B681E595F92E14E9A04A63 /* XySDK */,
 			);
-			name = "Development Pods";
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				CBDA41C03B2CC20FD53CEAAE083153DD /* Development Pods */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				A0864F4CEBA09D6199790FDBFFDB4BF7 /* Pods */,
 				6B2F98230A95B00035000CA2DE23E0E8 /* Products */,
 				75D683F7B78476E3F997FD4F69AD0EA9 /* Targets Support Files */,
 			);
@@ -153,23 +149,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		DC605D2805CC2383372F59515FCDEDF9 /* Frameworks */ = {
+		DC8E1343DC02A03025D2EBEE7F1B41AC /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				BC736C6F03D6BFC1E48EAAE8B5CC2277 /* XySDK.framework */,
+				B6FA2F867D7B148BAFB71D60B0677FC4 /* XySDK.xcconfig */,
 			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		F9884743EEB4C8B1A46F6261FFD30139 /* XySDK */ = {
-			isa = PBXGroup;
-			children = (
-				DC605D2805CC2383372F59515FCDEDF9 /* Frameworks */,
-				22B72D688336D75FEE1AEEADCD3AF22D /* Pod */,
-				8B5B74C227FE138C4D2256B697A05C9D /* Support Files */,
-			);
-			name = XySDK;
-			path = "../../ios-sdk-release";
+			name = "Support Files";
+			path = "../Target Support Files/XySDK";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -427,7 +413,7 @@
 		};
 		78C981B063664EE8A392F283F712811C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DEDB206CF53E6498D2A1991E3DE0FC3C /* XySDK.xcconfig */;
+			baseConfigurationReference = B6FA2F867D7B148BAFB71D60B0677FC4 /* XySDK.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -483,7 +469,7 @@
 		};
 		DA0F580F1530FAFC09E451CE45266E8F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DEDB206CF53E6498D2A1991E3DE0FC3C /* XySDK.xcconfig */;
+			baseConfigurationReference = B6FA2F867D7B148BAFB71D60B0677FC4 /* XySDK.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_WEAK = NO;

@@ -20,13 +20,13 @@ NSString *XySDK_DEVICE_ID = @"XySDKDeviceId";
 
 @implementation AppDelegate
 
+// DeviceIDs must be 20 bytes long, with characters [a-zA-Z0-9] only, and unique to each device.
 - (void) establishDeviceId {
     NSString *deviceId = [[NSUserDefaults standardUserDefaults] valueForKey: XySDK_DEVICE_ID];
 
     if (deviceId == nil) {
         NSString *uuid = [[NSUUID UUID] UUIDString];
         deviceId = [[uuid stringByReplacingOccurrencesOfString: @"-" withString: @""] substringToIndex: 20];
-        NSLog(@"deviceId %@ %@", deviceId, @(deviceId.length));
         [[NSUserDefaults standardUserDefaults] setValue: deviceId forKey: XySDK_DEVICE_ID];
     }
 
@@ -49,6 +49,10 @@ NSString *XySDK_DEVICE_ID = @"XySDKDeviceId";
 
     self.xyClient = [XyClient clientWithDeviceId: self.deviceId];
 
+    if (self.xyClient == nil) {
+        NSLog(@"Failed to initialize XyClient; check logs for more info.");
+    }
+
     [[NSNotificationCenter defaultCenter] addObserver: self
                                              selector: @selector(xyBluetoothIsEnabledNotification:)
                                                  name: XyBluetoothIsEnabledNotification
@@ -60,6 +64,15 @@ NSString *XySDK_DEVICE_ID = @"XySDKDeviceId";
                                                object: nil];
 
     [self.xyClient startBluetoothDiscovery];
+
+
+
+
+
+    // How to add a custom event.
+    // NOTE: Dictionary provided must be a JSON-serializable dictionary.
+    BOOL success = [self.xyClient addDeviceEvent: @{ @"foo": @"bar" }];
+    NSLog(@"Added device event? %@", success ? @"YES" : @"NO");
 
     return YES;
 }

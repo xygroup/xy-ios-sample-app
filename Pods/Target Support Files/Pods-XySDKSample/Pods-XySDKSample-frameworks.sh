@@ -153,10 +153,10 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "${PODS_ROOT}/../../ios-sdk-release/Frameworks/XySDK.framework"
+  install_framework "${PODS_ROOT}/XySDK/Frameworks/XySDK.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "${PODS_ROOT}/../../ios-sdk-release/Frameworks/XySDK.framework"
+  install_framework "${PODS_ROOT}/XySDK/Frameworks/XySDK.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

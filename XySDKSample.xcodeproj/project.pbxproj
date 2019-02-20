@@ -58,7 +58,6 @@
 				46C7CD0BEE469A60BCDCAA26 /* Pods-XySDKSample.debug.xcconfig */,
 				AF7BB88BD06E54C42A73CA51 /* Pods-XySDKSample.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -129,6 +128,11 @@
 				TargetAttributes = {
 					77AE5B4C221D00D100183623 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -173,7 +177,7 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-XySDKSample/Pods-XySDKSample-frameworks.sh",
-				"${PODS_ROOT}/../../ios-sdk-release/Frameworks/XySDK.framework",
+				"${PODS_ROOT}/XySDK/Frameworks/XySDK.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -361,7 +365,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W926437467;
 				INFOPLIST_FILE = XySDKSample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -378,7 +384,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W926437467;
 				INFOPLIST_FILE = XySDKSample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

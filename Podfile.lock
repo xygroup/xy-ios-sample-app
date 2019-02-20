@@ -2,15 +2,20 @@ PODS:
   - XySDK (1.0.0)
 
 DEPENDENCIES:
-  - XySDK (from `../ios-sdk-release`)
+  - XySDK (from `https://github.com/xygroup/xy-ios-sdk-release.git`)
 
 EXTERNAL SOURCES:
   XySDK:
-    :path: "../ios-sdk-release"
+    :git: https://github.com/xygroup/xy-ios-sdk-release.git
+
+CHECKOUT OPTIONS:
+  XySDK:
+    :commit: f3fcd995eeb31917f95276ed3dcec0c62cad6983
+    :git: https://github.com/xygroup/xy-ios-sdk-release.git
 
 SPEC CHECKSUMS:
-  XySDK: 8e0af1997d0cd24f4248824223c64ee27c9ed607
+  XySDK: a7f34ca34e3e13377cb06d05ea5efda747da413e
 
-PODFILE CHECKSUM: df624d64a6390b384b732b5381f97179d1780cdb
+PODFILE CHECKSUM: aee0e9de74b796c3cd4eb8445d8f922503e30240
 
 COCOAPODS: 1.6.0

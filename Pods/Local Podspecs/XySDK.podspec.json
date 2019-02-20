@@ -5,7 +5,7 @@
   "description": "XySDK for iOS.",
   "homepage": "https://github.com/xygroup/xy-ios-sdk-release",
   "license": "All Rights Reserved",
-  "authors": "Xy Group Ltd.",
+  "authors": "Xy Group Ltd",
   "platforms": {
     "ios": "10.0"
   },
